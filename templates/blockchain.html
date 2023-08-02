@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <title>⇛ FAST ⇛ Blockchain</title>
+  </head>
+  <body>
+    <wrapper id="wrapper">
+      <div id="profile_div">
+        <a class="profile" href="account.html" title="Ein Link zum Account"
+          >My Account</a
+        >
+        <a
+          class="profile"
+          href="fast_wallet.html"
+          title="Ein Link zur FAST Wallet"
+          >⇛ FAST ⇛ Wallet</a
+        >
+      </div>
+      <a id="header" href="index.html" title="Ein Link zu unserer Startseite">
+        <img
+          src="../static/images/logo_2.PNG"
+          width="500"
+          height="197"
+          alt="Das Logo von FAST"
+        />
+      </a>
+      <nav class="navi">
+          <a class="navi_point" href="index.html" title="Ein Link zu unserer Startseite">Home</a>
+        <a
+          class="navi_point"
+          href="order.html"
+          title="Ein Link zu unserer Auftragsseite"
+          >Auftrag</a
+        >
+        <a class="navi_point" href="mine.html" title="Ein Link zu xxx"
+          >Übermitteln</a
+        >
+        <a class="navi_point" href="blockchain.html" title="Ein Link zu xxx"
+          >Blockchain</a
+        >
+      </nav>
+      <main id="main">
+        <content id="content">
+            <h1>Deine Blockchain Einträge</h1>
+            <div>
+            {% for block in blockchain %}
+            <h2>Block Nummer: {{ block.index }}</h2>
+            <div>
+                <p>Nonce: {{ block.nonce }}</p>
+                <p>Timestamp: {{ block.timestamp }}</p>
+                <p>Prev. Hash: {{ block.previous_hash }}</p>
+                <p>Hash: {{ block.hash }}</p>
+                
+            </div>
+            <div>
+                <h3>Enthaltene Aufträge:</h3>
+                <p>{{ blockchain2 }}</p>
+                {% for transaction in block.transactions %}
+                <div>
+                <p>Sender: {{ transaction.sender }}</p>
+                <p>Cargo Type: {{ transaction.type }}</p>
+                <p>Cargo Weight: {{ transaction.weight }}</p>
+                <p>Receiver: {{ transaction.receiver }}</p>
+                <p>Destination: {{ transaction.destination }}</p>
+                <p>Timestamp: {{ transaction.time }}</p>
+                <p>Fee Sender: {{ transaction.sender_wallet }}</p>
+                <p style="border-bottom: solid 2px white; padding-bottom: 15px;">Fee Receiver: {{ transaction.receiver_wallet }}</p>
+                </div>
+                {% endfor %}
+            </div >
+          <div>
+          {% endfor %}
+        </content>
+      </main>
+    </wrapper>
+  </body>
+</html>
