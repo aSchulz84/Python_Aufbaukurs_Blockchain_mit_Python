@@ -5,3 +5,4 @@ Aufgabenstellung
 ================
 
 Einen realen UseCase für eine Blockahin Anwendung entwickeln und simulieren.
+Die Simulation wird mit der app.py gestartet.
