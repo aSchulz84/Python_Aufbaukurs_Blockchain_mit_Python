@@ -1,5 +1,5 @@
 # Python_Aufbaukurs_Blockchain_mit_Python
-Mein Projekt zum cimdata Python Aufbaukurs - Blockchain mit Python
+Mein unverändertes Projekt zum cimdata Python Aufbaukurs - Blockchain mit Python
 
 Aufgabenstellung
 ================
